@@ -3,5 +3,5 @@
 *.pyc
 *.db
 bank/local_settings.py
-static
-media
+static/*
+media/*
