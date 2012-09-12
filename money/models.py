@@ -45,26 +45,6 @@ class Wallet(models.Model):
         return Transaction.objects.filter(template_id__in=self.templates_ids,
             **kwargs)
 
-    def get_transactions_amount(self, transactions=None):
-        """Calculate transactions amount"""
-        balance = 0.0
-        for transaction in transactions or self.transactions():
-            if transaction.template.source == self:
-                balance -= transaction.amount
-            else:
-                balance += transaction.amount * transaction.rate
-        return balance
-
-#    def set_farthest_transaction(self):
-#        """Set farthest transaction from the current balance"""
-#        balance = 0.0
-#        for transaction in self.transactions(template__destination=self):
-#            balance += transaction.destination_amount
-#            if self.balance <= balance:
-#                self.transaction = transaction
-#                break
-#        self.save()
-
 
 class Template(models.Model):
     title = models.CharField(max_length=75)
@@ -115,19 +95,22 @@ class Transaction(models.Model):
         if self.template.destination:
             self.destination_balance = (self.template.destination.balance +
                                         self.source_amount * self.rate)
-        self.gain = self.get_gain()
         super(Transaction, self).save(force_insert, force_update, using)
+        self.set_gain()
 
     @property
     def source(self):
+        """Source related to this transaction"""
         return self.template.source
 
     @property
     def destination(self):
+        """Destination related to this transaction"""
         return self.template.destination
 
     @property
     def reverse_template(self):
+        """Get a reverse template of the transaction"""
         try:
             reverse = Template.objects.get(source=self.destination,
                 destination=self.source)
@@ -135,7 +118,8 @@ class Transaction(models.Model):
             return None
         return reverse
 
-    def get_gain(self):
+    def set_gain(self):
+        """Calculate gain of the transaction"""
         if not self.source or not self.destination or not self.reverse_template:
             return None
         transactions = Transaction.objects.filter(
@@ -146,18 +130,41 @@ class Transaction(models.Model):
             gain = 0.0
             for transaction in transactions:
                 if source_rest >= transaction.rest:
-                    gain += self.destination_amount * transaction.rest / self.source_amount - transaction.source_amount * transaction.rest / transaction.destination_amount
+                    gain += (self.destination_amount *
+                             transaction.rest / self.source_amount
+                             - transaction.source_amount *
+                               transaction.rest / transaction.destination_amount)
                     source_rest -= transaction.rest
                     Transaction.objects.filter(pk=transaction.pk).update(
                         rest=None)
+                    RestDistribution.objects.create(
+                        transaction=self,
+                        destination=transaction,
+                        rest=transaction.rest
+                    )
                 else:
-                    gain += self.destination_amount * source_rest / self.source_amount - transaction.source_amount * source_rest / transaction.destination_amount
+                    gain += (self.destination_amount *
+                             source_rest / self.source_amount
+                             - transaction.source_amount *
+                               source_rest / transaction.destination_amount)
                     source_rest = transaction.rest - source_rest
                     Transaction.objects.filter(pk=transaction.pk).update(
                         rest=source_rest)
+                    RestDistribution.objects.create(
+                        transaction=self,
+                        destination=transaction,
+                        rest=source_rest
+                    )
                     break
         Transaction.objects.filter(pk=self.pk).update(gain=gain)
         return gain
+
+
+class RestDistribution(models.Model):
+    """Model used to maintain the rest of relations deleting transactions"""
+    transaction = models.ForeignKey(Transaction, related_name='rests')
+    destination = models.ForeignKey(Transaction)
+    rest = models.FloatField()
 
 
 @receiver(post_save, sender=Transaction)
@@ -174,11 +181,18 @@ def do_transaction(sender, instance, created, **kwargs):
 
 @receiver(pre_delete, sender=Transaction)
 def undo_transaction(sender, instance, **kwargs):
-    source = instance.template.source
-    destination = instance.template.destination
+    source = instance.source
+    destination = instance.destination
+    # Restore source balance
     if source:
-        source.balance += instance.amount
+        source.balance += instance.source_amount
         source.save()
+    # Restore destination balance
     if destination:
-        destination.balance -= instance.amount * instance.rate
+        destination.balance -= instance.source_amount * instance.rate
         destination.save()
+    # Restore rests
+    for rest in instance.rests.filter(transaction=instance):
+        transaction = rest.destination
+        transaction.rest = rest.rest
+        transaction.save()

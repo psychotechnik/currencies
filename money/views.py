@@ -89,17 +89,6 @@ class TransactionCreate(MessageFormErrorsMixin, generic.CreateView):
         return reverse('money:transaction:list')
 
 
-class TransactionUpdate(MessageFormErrorsMixin, generic.UpdateView):
-    model = Transaction
-    form_class = TransactionForm
-
-    def get_success_url(self):
-        messages.add_message(self.request, messages.SUCCESS,
-            'Transaction successfully updated.'
-        )
-        return reverse('money:transaction:list')
-
-
 class TransactionDelete(generic.DeleteView):
     model = Transaction
     form_class = TransactionForm
@@ -109,6 +98,12 @@ class TransactionDelete(generic.DeleteView):
             'Transaction successfully deleted.'
         )
         return reverse('money:transaction:list')
+
+
+class LatestTransactionDelete(TransactionDelete):
+    def get_object(self, queryset=None):
+        latest = Transaction.objects.latest()
+        return latest
 
 
 class WalletList(generic.ListView):

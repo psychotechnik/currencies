@@ -6,8 +6,7 @@ from money.views import (TemplateDelete, TemplateUpdate, TemplateDetail,
 from money.views import (WalletList, WalletCreate, WalletDetail, WalletUpdate,
                          WalletDelete)
 from money.views import (TransactionList, TransactionCreate,
-                         TransactionDetail, TransactionUpdate,
-                         TransactionDelete)
+                         TransactionDetail, LatestTransactionDelete)
 
 currency_urlpatterns = patterns('',
     url(r'^$', CurrencyList.as_view(), name='list'),
@@ -28,10 +27,8 @@ template_urlpatterns = patterns('',
 transaction_urlpatterns = patterns('',
     url(r'^$', TransactionList.as_view(), name='list'),
     url(r'^create/$', TransactionCreate.as_view(), name='create'),
+    url(r'^delete/$', LatestTransactionDelete.as_view(), name='delete'),
     url(r'^(?P<pk>\d+)/$', TransactionDetail.as_view(), name='detail'),
-# Transaction has only create and delete methods!!!
-#    url(r'^(?P<pk>\d+)/update/$', TransactionUpdate.as_view(), name='update'),
-    url(r'^(?P<pk>\d+)/delete/$', TransactionDelete.as_view(), name='delete'),
 )
 
 wallet_urlpatterns = patterns('',
