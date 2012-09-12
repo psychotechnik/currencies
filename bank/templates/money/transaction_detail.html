@@ -1,0 +1,36 @@
+{% extends "money/transaction_base.html" %}
+
+{% block content %}
+    <table class="table table-striped table-hover">
+        <caption>
+            Transaction #{{ object.pk }}</caption>
+        <tr>
+            <th>
+                Date
+            </th>
+            <td>
+                {{ object.date|date:"SHORT_DATETIME_FORMAT" }}
+            </td>
+        </tr>
+        <tr>
+            <th>Source</th>
+            <td>{{ object.template.source }}</td>
+        </tr>
+        <tr>
+            <th>Destination</th>
+            <td>{{ object.template.destination }}</td>
+        </tr>
+        <tr>
+            <th>Rate</th>
+            <td>{{ object.rate }}</td>
+        </tr>
+        <tr>
+            <th>Amount</th>
+            <td>{{ object.source_amount }}</td>
+        </tr>
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "money/transaction_menu.html" %}
+{% endblock %}

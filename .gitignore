@@ -1,4 +1,7 @@
 *.log
 *.pot
 *.pyc
-local_settings.py
+*.db
+bank/local_settings.py
+static
+media

@@ -1,0 +1,74 @@
+[
+    {
+        "pk": 1, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "EUR", 
+            "is_active": true, 
+            "title": "European Euro"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "USD", 
+            "is_active": true, 
+            "title": "United States dollar"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "money.wallet", 
+        "fields": {
+            "currency": 2, 
+            "balance": 0.0, 
+            "title": "My USD wallet"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "money.wallet", 
+        "fields": {
+            "currency": 1, 
+            "balance": 0.0, 
+            "title": "My euro wallet"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "money.template", 
+        "fields": {
+            "source": null, 
+            "destination": 1, 
+            "title": "Deposits"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "money.template", 
+        "fields": {
+            "source": 1, 
+            "destination": 2, 
+            "title": "Exchange USD to EUR"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "money.template", 
+        "fields": {
+            "source": 2, 
+            "destination": 1, 
+            "title": "Exchange EUR to USD"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "money.template", 
+        "fields": {
+            "source": 1, 
+            "destination": null, 
+            "title": "Withdrawal"
+        }
+    }
+]

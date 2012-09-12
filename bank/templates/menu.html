@@ -1,0 +1,10 @@
+<ul class="nav">
+    <li class="{{ menu_wallets }}"><a
+            href="{% url money:wallet:list %}">Wallets</a></li>
+    <li class="{{ menu_transactions }}"><a
+           href="{% url money:transaction:list %}">Transactions</a></li>
+    <li class="{{ menu_templates }}"><a
+           href="{% url money:template:list %}">Templates</a></li>
+    <li class="{{ menu_currencies }}"><a
+           href="{% url money:currency:list %}">Currencies</a></li>
+</ul>

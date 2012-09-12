@@ -1,0 +1,28 @@
+{% extends "money/wallet_base.html" %}
+
+{% block content %}
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Title</th>
+            <th>Currency</th>
+            <th>Ballance</th>
+        </tr>
+        {% for object in object_list %}
+            <tr>
+                <td>
+                    <a href="{{ object.get_absolute_url }}">{{ object }}</a>
+                </td>
+                <td>
+                    {{ object.currency }} ({{ object.currency.code }})
+                </td>
+                <td>
+                    {{ object.balance|floatformat:2 }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "money/wallet_menu.html" with menu_list="active" %}
+{% endblock %}

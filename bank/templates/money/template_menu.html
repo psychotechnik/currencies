@@ -1,0 +1,10 @@
+<ul class="nav nav-tabs nav-stacked">
+    <li class="{{ menu_create }}"><a href="{% url money:template:create %}">Add a new template</a></li>
+    <li class="{{ menu_list }}"><a href="{% url money:template:list %}">List of templates</a></li>
+    {% if object %}
+        <li class="{{ menu_update }}"><a
+                href="{% url money:template:update object.pk %}">Edit this template</a></li>
+        <li class="{{ menu_delete }}"><a
+                href="{% url money:template:delete object.pk %}">Delete this template</a></li>
+    {% endif %}
+</ul>

@@ -1,0 +1,10 @@
+<ul class="nav nav-tabs nav-stacked">
+    <li class="{{ menu_create }}"><a href="{% url money:transaction:create %}">Add a new transaction</a></li>
+    <li class="{{ menu_list }}"><a href="{% url money:transaction:list %}">List of transactions</a></li>
+    {% if object %}
+{#        <li class="{{ menu_update }}"><a#}
+{#                href="{% url money:transaction:update object.pk %}">Edit this transaction</a></li>#}
+        <li class="{{ menu_delete }}"><a
+                href="{% url money:transaction:delete object.pk %}">Delete this transaction</a></li>
+    {% endif %}
+</ul>

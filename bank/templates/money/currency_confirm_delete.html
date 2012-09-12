@@ -1,0 +1,19 @@
+{% extends "money/currency_base.html" %}
+
+{% block content %}
+    <div class="alert alert-block">
+        <h4>Warning!</h4>
+        Do you really wanna <strong>delete</strong> currency
+        «<strong>{{ object }}</strong>»?
+    </div>
+    <form action="." method="post">
+        {% csrf_token %}
+        <a class="btn btn-success" href="{% url money:currency:list %}">No,
+            thanks!</a>
+        <button class="btn btn-danger" type="submit">Yes, delete it!</button>
+    </form>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "money/currency_menu.html" with menu_delete="active" %}
+{% endblock %}

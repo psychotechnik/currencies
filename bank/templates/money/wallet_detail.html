@@ -1,0 +1,52 @@
+{% extends "money/wallet_base.html" %}
+
+{% block content %}
+    <table class="table table-striped table-hover">
+        <caption>Wallet «<a
+                href="{% url money:wallet:update object.pk %}">{{ object }}</a>»,
+            balance: {{ object.balance }} {{ object.currency.code }}
+        </caption>
+        <tr>
+            <th>Date</th>
+            <th>Credits</th>
+            <th>Debits</th>
+            <th>Balance</th>
+            <th>Rate</th>
+            <th>Gain</th>
+            <th>Rest</th>
+            <th>Transaction</th>
+        </tr>
+        {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.date|date:"SHORT_DATE_FORMAT" }}</td>
+                <td class="align_right">
+                    {% if transaction.template.source == object %}
+                        {{ transaction.source_amount|floatformat:"2" }}
+                    {% endif %}
+                </td>
+                <td class="align_right">
+                    {% if transaction.template.destination == object %}
+                        {{ transaction.destination_amount|floatformat:"2" }}
+                    {% endif %}
+                </td>
+                <td class="align_right">
+                    {% if transaction.template.source == object %}
+                        {{ transaction.source_balance|floatformat:"2" }}
+                    {% else %}
+                        {{ transaction.destination_balance|floatformat:"2" }}
+                    {% endif %}
+                </td>
+                <td class="align_right">{{ transaction.rate|floatformat:"4" }}</td>
+                <td class="align_right">{{ transaction.gain|floatformat:"2" }}</td>
+                <td class="align_right">{{ transaction.rest|floatformat:"2" }}</td>
+                <td>
+                    <a href="{{ transaction.get_absolute_url }}">{{ transaction }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "money/wallet_menu.html" %}
+{% endblock %}

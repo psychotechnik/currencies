@@ -1,0 +1,10 @@
+<ul class="nav nav-tabs nav-stacked">
+    <li class="{{ menu_create }}"><a href="{% url money:wallet:create %}">Add a new wallet</a></li>
+    <li class="{{ menu_list }}"><a href="{% url money:wallet:list %}">List of wallets</a></li>
+    {% if object %}
+        <li class="{{ menu_update }}"><a
+                href="{% url money:wallet:update object.pk %}">Edit this wallet</a></li>
+        <li class="{{ menu_delete }}"><a
+                href="{% url money:wallet:delete object.pk %}">Delete this wallet</a></li>
+    {% endif %}
+</ul>

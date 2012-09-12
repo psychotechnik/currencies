@@ -1,0 +1,16 @@
+{% extends "money/wallet_base.html" %}
+
+{% block content %}
+    <form action="." method="post" class="form-inline">
+        {% include "form_inline.html" %}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+{% endblock %}
+
+{% block sidebar %}
+    {% if object %}
+        {% include "money/wallet_menu.html" with menu_update="active" %}
+    {% else %}
+        {% include "money/wallet_menu.html" with menu_create="active" %}
+    {% endif %}
+{% endblock %}
