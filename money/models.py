@@ -85,7 +85,7 @@ class Transaction(models.Model):
         return 'money:transaction:detail', [self.pk, ]
 
     def save(self, force_insert=False, force_update=False, using=None):
-        self.destination_amount = self.source_amount * self.rate
+        self.destination_amount = self.source_amount * (self.source and self.rate or 1)
         self.rest = self.destination_amount
         super(Transaction, self).save(force_insert, force_update, using)
 
@@ -127,7 +127,7 @@ def do_transaction(sender, instance, created, **kwargs):
         source.balance -= instance.source_amount
         source.save()
     if destination:
-        destination.balance += instance.source_amount * instance.rate
+        destination.balance += instance.source_amount * (source and instance.rate or 1)
         destination.save()
 
     # Calculate gain of the transaction
