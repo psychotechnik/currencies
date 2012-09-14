@@ -33,6 +33,7 @@ class TransactionTest(TestCase):
         self.assertEqual(transaction.destination.balance, 15.0)
         self.assertEqual(transaction.rest, 15.0)
         self.assertEqual(transaction.gain, None)
+
         #
         # Exchange USD to EUR rate 1.5 amount 10 gain 0
         #
@@ -43,23 +44,34 @@ class TransactionTest(TestCase):
         self.assertEqual(transaction.destination.balance, 30.0)
         self.assertEqual(transaction.rest, 15.0)
         self.assertEqual(transaction.gain, None)
+
         #
-        # Exchange EUR to USD rate 0.8 amount 10 gain 2
+        # Exchange EUR to USD rate 0.8 amount 10 gain 1.333333333333333
         #
-        transaction = Transaction(template=self.eur_usd, rate=0.8,
+        transaction = Transaction.objects.create(template=self.eur_usd, rate=0.8,
             source_amount=10)
-        transaction.save()
+        transaction = Transaction.objects.get(pk=transaction.pk)
         self.assertEqual(transaction.source.balance, 20.0)
         self.assertEqual(transaction.destination.balance, 88.0)
         self.assertEqual(transaction.rest, 8.0)
         self.assertEqual(transaction.gain, 1.333333333333333)
+
         #
-        # Exchange EUR to USD rate 0.8 amount 10 gain 2
+        # Exchange EUR to USD rate 0.8 amount 20 gain 2.6666666666666665
         #
-        transaction = Transaction(template=self.eur_usd, rate=0.8,
+        transaction = Transaction.objects.create(template=self.eur_usd, rate=0.8,
             source_amount=20)
-        transaction.save()
-        self.assertEqual(transaction.source.balance, 00.0)
+        transaction = Transaction.objects.get(pk=transaction.pk)
+        self.assertEqual(transaction.source.balance, 0.0)
         self.assertEqual(transaction.destination.balance, 104.0)
         self.assertEqual(transaction.rest, 16.0)
         self.assertEqual(transaction.gain, 2.6666666666666665)
+
+        #
+        # Delete last  transaction
+        #
+        transaction.delete()
+
+        transactions = Transaction.objects.filter(template=self.usd_eur)
+        self.assertEqual(transactions[0].rest, 15.0)
+        self.assertEqual(transactions[1].rest, 5.0)
