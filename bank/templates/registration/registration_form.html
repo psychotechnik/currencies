@@ -1,0 +1,23 @@
+{% extends "registration/base.html" %}
+
+{% block content %}
+    <form action="." method="post" class="form-horizontal">
+        {% include "registration/form.html" %}
+        <div class="control-group">
+            <div class="controls">
+                <button type="submit" class="btn">Register</button>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
+
+{% block sidebar %}
+    <dl>
+        <dt>Already registered?</dt>
+        <dd>Just use <a href="{% url auth_login %}">log in form</a>.</dd>
+        <dt>Forgot account password?</dt>
+        <dd>Please use <a href="{% url auth_password_reset %}">password
+            recovery form</a>.</dd>
+    </dl>
+{% endblock %}

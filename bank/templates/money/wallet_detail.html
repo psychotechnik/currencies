@@ -13,7 +13,6 @@
             <th>Balance</th>
             <th>Rate</th>
             <th>Gain</th>
-            <th>Rest</th>
             <th>Transaction</th>
         </tr>
         {% for transaction in transactions %}
@@ -38,7 +37,6 @@
                 </td>
                 <td class="align_right">{{ transaction.rate|floatformat:"4" }}</td>
                 <td class="align_right">{{ transaction.gain|floatformat:"2" }}</td>
-                <td class="align_right">{{ transaction.rest|floatformat:"2" }}</td>
                 <td>
                     <a href="{{ transaction.get_absolute_url }}">{{ transaction }}</a>
                 </td>

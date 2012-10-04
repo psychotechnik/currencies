@@ -9,7 +9,6 @@
             <th class="align_right">Source</th>
             <th class="align_right">Destination</th>
             <th class="align_right">Gain</th>
-            <th class="align_right">Rest</th>
         </tr>
         {% for object in object_list %}
             <tr>
@@ -21,7 +20,6 @@
                 <td class="align_right">{{ object.source_amount|floatformat:"2" }}</td>
                 <td class="align_right">{{ object.destination_amount|floatformat:"2" }}</td>
                 <td class="align_right">{{ object.gain|floatformat:"2" }}</td>
-                <td class="align_right">{{ object.rest|floatformat:"2" }}</td>
             </tr>
         {% endfor %}
     </table>

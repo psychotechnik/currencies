@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save, pre_delete
 from django.dispatch.dispatcher import receiver
@@ -15,6 +16,7 @@ class Currency(models.Model):
 
 
 class Wallet(models.Model):
+    user = models.ForeignKey(User, related_name='wallets')
     title = models.CharField(max_length=75)
     currency = models.OneToOneField(Currency)
     balance = models.FloatField(default=0.0)
@@ -46,6 +48,7 @@ class Wallet(models.Model):
 
 
 class Template(models.Model):
+    user = models.ForeignKey(User, related_name='templates')
     title = models.CharField(max_length=75)
     source = models.ForeignKey(Wallet, null=True, related_name='sources')
     destination = models.ForeignKey(Wallet, null=True,
@@ -63,6 +66,7 @@ class Template(models.Model):
 
 
 class Transaction(models.Model):
+    user = models.ForeignKey(User, related_name='transactions')
     template = models.ForeignKey(Template, related_name='transactions')
     rate = models.FloatField(default=1.0)
     source_amount = models.FloatField()

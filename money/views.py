@@ -1,8 +1,16 @@
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.urlresolvers import  reverse
 from django.contrib import messages
+from django.utils.decorators import method_decorator
 from django.views import generic
 from money.forms import CurrencyForm, TransactionForm, WalletForm, TemplateForm
 from money.models import Currency, Transaction, Wallet, Template
+
+class UserObjectsMixin(object):
+    def get_queryset(self):
+        qs = super(UserObjectsMixin, self).get_queryset()
+        return qs.filter(user=self.request.user)
+
 
 class MessageFormErrorsMixin(object):
     def form_invalid(self, form):
@@ -10,17 +18,30 @@ class MessageFormErrorsMixin(object):
         return super(MessageFormErrorsMixin, self).form_invalid(form)
 
 
-class CurrencyList(generic.ListView):
+class LoginRequiredMixin(object):
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(LoginRequiredMixin, self).dispatch(request, *args,
+            **kwargs)
+
+
+class CurrencyList(LoginRequiredMixin, generic.ListView):
     model = Currency
 
 
-class CurrencyDetail(generic.DetailView):
+class CurrencyDetail(LoginRequiredMixin, generic.DetailView):
     model = Currency
 
 
-class CurrencyCreate(MessageFormErrorsMixin, generic.CreateView):
+class CurrencyCreate(LoginRequiredMixin, MessageFormErrorsMixin,
+    generic.CreateView):
     model = Currency
     form_class = CurrencyForm
+
+    @method_decorator(
+        user_passes_test(lambda u: u.has_perm('money.create_currency')))
+    def dispatch(self, request, *args, **kwargs):
+        return super(CurrencyCreate, self).dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
         messages.add_message(request, messages.INFO,
@@ -35,10 +56,22 @@ class CurrencyCreate(MessageFormErrorsMixin, generic.CreateView):
         )
         return reverse('money:currency:list')
 
+    def form_valid(self, form):
+        currency = form.save(commit=False)
+        currency.user = self.request.user
+        currency.save()
+        return super(CurrencyCreate, self).form_valid(form)
 
-class CurrencyUpdate(MessageFormErrorsMixin, generic.UpdateView):
+
+class CurrencyUpdate(LoginRequiredMixin, MessageFormErrorsMixin,
+    generic.UpdateView):
     model = Currency
     form_class = CurrencyForm
+
+    @method_decorator(
+        user_passes_test(lambda u: u.has_perm('money.change_currency')))
+    def dispatch(self, request, *args, **kwargs):
+        return super(CurrencyUpdate, self).dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
         messages.add_message(request, messages.INFO,
@@ -54,8 +87,13 @@ class CurrencyUpdate(MessageFormErrorsMixin, generic.UpdateView):
         return reverse('money:currency:list')
 
 
-class CurrencyDelete(generic.DeleteView):
+class CurrencyDelete(LoginRequiredMixin, generic.DeleteView):
     model = Currency
+
+    @method_decorator(
+        user_passes_test(lambda u: u.has_perm('money.delete_currency')))
+    def dispatch(self, request, *args, **kwargs):
+        return super(CurrencyDelete, self).dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
         messages.add_message(self.request, messages.SUCCESS,
@@ -64,15 +102,18 @@ class CurrencyDelete(generic.DeleteView):
         return reverse('money:currency:list')
 
 
-class TransactionList(generic.ListView):
+class TransactionList(LoginRequiredMixin, UserObjectsMixin, generic.ListView):
     model = Transaction
 
 
-class TransactionDetail(generic.DetailView):
+class TransactionDetail(LoginRequiredMixin, UserObjectsMixin,
+    generic.DetailView):
     model = Transaction
 
 
-class TransactionCreate(MessageFormErrorsMixin, generic.CreateView):
+class TransactionCreate(LoginRequiredMixin, UserObjectsMixin,
+    MessageFormErrorsMixin,
+    generic.CreateView):
     model = Transaction
     form_class = TransactionForm
 
@@ -88,8 +129,15 @@ class TransactionCreate(MessageFormErrorsMixin, generic.CreateView):
         )
         return reverse('money:transaction:list')
 
+    def form_valid(self, form):
+        transaction = form.save(commit=False)
+        transaction.user = self.request.user
+        transaction.save()
+        return super(TransactionCreate, self).form_valid(form)
 
-class TransactionDelete(generic.DeleteView):
+
+class TransactionDelete(LoginRequiredMixin, UserObjectsMixin,
+    generic.DeleteView):
     model = Transaction
     form_class = TransactionForm
 
@@ -106,11 +154,11 @@ class LatestTransactionDelete(TransactionDelete):
         return latest
 
 
-class WalletList(generic.ListView):
+class WalletList(LoginRequiredMixin, UserObjectsMixin, generic.ListView):
     model = Wallet
 
 
-class WalletDetail(generic.DetailView):
+class WalletDetail(LoginRequiredMixin, UserObjectsMixin, generic.DetailView):
     model = Wallet
 
     def get_context_data(self, **kwargs):
@@ -122,7 +170,9 @@ class WalletDetail(generic.DetailView):
         return context
 
 
-class WalletCreate(MessageFormErrorsMixin, generic.CreateView):
+class WalletCreate(LoginRequiredMixin, UserObjectsMixin,
+    MessageFormErrorsMixin,
+    generic.CreateView):
     model = Wallet
     form_class = WalletForm
 
@@ -138,8 +188,16 @@ class WalletCreate(MessageFormErrorsMixin, generic.CreateView):
         )
         return reverse('money:wallet:list')
 
+    def form_valid(self, form):
+        wallet = form.save(commit=False)
+        wallet.user = self.request.user
+        wallet.save()
+        return super(WalletCreate, self).form_valid(form)
 
-class WalletUpdate(MessageFormErrorsMixin, generic.UpdateView):
+
+class WalletUpdate(LoginRequiredMixin, UserObjectsMixin,
+    MessageFormErrorsMixin,
+    generic.UpdateView):
     model = Wallet
     form_class = WalletForm
 
@@ -150,7 +208,7 @@ class WalletUpdate(MessageFormErrorsMixin, generic.UpdateView):
         return reverse('money:wallet:list')
 
 
-class WalletDelete(generic.DeleteView):
+class WalletDelete(LoginRequiredMixin, UserObjectsMixin, generic.DeleteView):
     model = Wallet
     form_class = WalletForm
 
@@ -161,17 +219,20 @@ class WalletDelete(generic.DeleteView):
         return reverse('money:wallet:list')
 
 
-class TemplateList(generic.ListView):
+class TemplateList(LoginRequiredMixin, UserObjectsMixin, generic.ListView):
     model = Template
 
 
-class TemplateDetail(generic.DetailView):
+class TemplateDetail(LoginRequiredMixin, UserObjectsMixin, generic.DetailView):
     model = Template
 
 
-class TemplateCreate(MessageFormErrorsMixin, generic.CreateView):
+class TemplateCreate(LoginRequiredMixin, UserObjectsMixin,
+    MessageFormErrorsMixin,
+    generic.CreateView):
     model = Template
     form_class = TemplateForm
+
     def get(self, request, *args, **kwargs):
         messages.add_message(request, messages.INFO,
             'Fill template title, one or both source and destination wallets.'
@@ -184,8 +245,16 @@ class TemplateCreate(MessageFormErrorsMixin, generic.CreateView):
         )
         return reverse('money:template:list')
 
+    def form_valid(self, form):
+        template = form.save(commit=False)
+        template.user = self.request.user
+        template.save()
+        return super(TemplateCreate, self).form_valid(form)
 
-class TemplateUpdate(MessageFormErrorsMixin, generic.UpdateView):
+
+class TemplateUpdate(LoginRequiredMixin, UserObjectsMixin,
+    MessageFormErrorsMixin,
+    generic.UpdateView):
     model = Template
     form_class = TemplateForm
 
@@ -196,7 +265,7 @@ class TemplateUpdate(MessageFormErrorsMixin, generic.UpdateView):
         return reverse('money:template:list')
 
 
-class TemplateDelete(generic.DeleteView):
+class TemplateDelete(LoginRequiredMixin, UserObjectsMixin, generic.DeleteView):
     model = Template
 
     def get_success_url(self):

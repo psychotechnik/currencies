@@ -1,4 +1,5 @@
 # Django settings for bank project.
+from django.core.urlresolvers import reverse_lazy
 
 import os
 
@@ -125,6 +126,8 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'south',
+    'registration',
     'money',
 )
 
@@ -156,3 +159,11 @@ LOGGING = {
         },
     }
 }
+
+LOGIN_REDIRECT_URL = reverse_lazy('home')
+LOGOUT_URL = reverse_lazy('home')
+ACCOUNT_ACTIVATION_DAYS = 5
+INTERNAL_IPS = ('127.0.0.1',)
+EMAIL_PORT = 2525
+DEFAULT_FROM_EMAIL = 'webmaster@localhost'
+REGISTRATION_OPEN = True
