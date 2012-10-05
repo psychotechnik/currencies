@@ -47,16 +47,31 @@
 </div>
 
 <div class="container wrapper">
-    {% block main %}{% endblock %}
+    {% block main %}
+        <div class="hero-unit">
+            <h1>Welcome to bank application</h1>
+
+            <p>This application will help you keep your balance, currency
+                conversion, perform transactions and calculate profits.</p>
+            <a href="{% url registration_register %}"
+               class="btn btn-primary btn-large pull-right">Get access!</a>
+        </div>
+        <div class="row">
+            <div class="span4"><p><i class="icon-ok"></i>Information box about the
+                benefits and advantages</p>
+            </div>
+            <div class="span4"><p><i class="icon-ok"></i>Information box about the
+                benefits and advantages</p>
+            </div>
+            <div class="span4"><p><i class="icon-ok"></i>Information box about the
+                benefits and advantages</p>
+            </div>
+        </div>
+    {% endblock %}
 </div>
 <script type="text/javascript"
         src="{{ STATIC_URL }}jquery-1.8.1.min.js"></script>
 <script type="text/javascript"
         src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.dropdown-toggle').dropdown();
-    })
-</script>
 </body>
 </html>
