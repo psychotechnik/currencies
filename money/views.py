@@ -112,8 +112,7 @@ class TransactionDetail(LoginRequiredMixin, UserObjectsMixin,
 
 
 class TransactionCreate(LoginRequiredMixin, UserObjectsMixin,
-    MessageFormErrorsMixin,
-    generic.CreateView):
+    MessageFormErrorsMixin, generic.CreateView):
     model = Transaction
     form_class = TransactionForm
 
@@ -171,8 +170,7 @@ class WalletDetail(LoginRequiredMixin, UserObjectsMixin, generic.DetailView):
 
 
 class WalletCreate(LoginRequiredMixin, UserObjectsMixin,
-    MessageFormErrorsMixin,
-    generic.CreateView):
+    MessageFormErrorsMixin, generic.CreateView):
     model = Wallet
     form_class = WalletForm
 
@@ -196,8 +194,7 @@ class WalletCreate(LoginRequiredMixin, UserObjectsMixin,
 
 
 class WalletUpdate(LoginRequiredMixin, UserObjectsMixin,
-    MessageFormErrorsMixin,
-    generic.UpdateView):
+    MessageFormErrorsMixin, generic.UpdateView):
     model = Wallet
     form_class = WalletForm
 
@@ -228,8 +225,7 @@ class TemplateDetail(LoginRequiredMixin, UserObjectsMixin, generic.DetailView):
 
 
 class TemplateCreate(LoginRequiredMixin, UserObjectsMixin,
-    MessageFormErrorsMixin,
-    generic.CreateView):
+    MessageFormErrorsMixin, generic.CreateView):
     model = Template
     form_class = TemplateForm
 
@@ -253,8 +249,7 @@ class TemplateCreate(LoginRequiredMixin, UserObjectsMixin,
 
 
 class TemplateUpdate(LoginRequiredMixin, UserObjectsMixin,
-    MessageFormErrorsMixin,
-    generic.UpdateView):
+    MessageFormErrorsMixin, generic.UpdateView):
     model = Template
     form_class = TemplateForm
 
