@@ -167,3 +167,8 @@ INTERNAL_IPS = ('127.0.0.1',)
 EMAIL_PORT = 2525
 DEFAULT_FROM_EMAIL = 'webmaster@localhost'
 REGISTRATION_OPEN = True
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
