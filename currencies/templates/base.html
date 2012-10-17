@@ -5,10 +5,15 @@
     <title>{% block title %}bank{% endblock %}</title>
     <link type="text/css" rel="stylesheet"
           href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet"
+          href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css">
     <style type="text/css">
         body {
             font-family: "Liberation Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            padding-top: 70px;
+        }
+
+        .main {
+            margin-top: 60px;
         }
 
         tr.muted a {
@@ -46,25 +51,41 @@
     </div>
 </div>
 
-<div class="container wrapper">
+<div class="container main">
     {% block main %}
-        <div class="hero-unit">
-            <h1>Welcome to bank application</h1>
-
-            <p>This application will help you keep your balance, currency
-                conversion, perform transactions and calculate profits.</p>
-            <a href="{% url registration_register %}"
-               class="btn btn-primary btn-large pull-right">Get access!</a>
-        </div>
         <div class="row">
-            <div class="span4"><p><i class="icon-ok"></i>Information box about the
-                benefits and advantages</p>
-            </div>
-            <div class="span4"><p><i class="icon-ok"></i>Information box about the
-                benefits and advantages</p>
-            </div>
-            <div class="span4"><p><i class="icon-ok"></i>Information box about the
-                benefits and advantages</p>
+            <div class="span12">
+                <div class="hero-unit">
+                    <h1>Welcome to bank application</h1>
+
+                    <p>This application will help you keep your balance,
+                        currency
+                        conversion, perform transactions and calculate
+                        profits.</p>
+                    <a href="{% url registration_register %}"
+                       class="btn btn-primary btn-large pull-right">Get
+                        access!</a>
+                </div>
+                <div class="row">
+                    <div class="span4"><p><i class="icon-ok"></i>Information
+                        box
+                        about
+                        the
+                        benefits and advantages</p>
+                    </div>
+                    <div class="span4"><p><i class="icon-ok"></i>Information
+                        box
+                        about
+                        the
+                        benefits and advantages</p>
+                    </div>
+                    <div class="span4"><p><i class="icon-ok"></i>Information
+                        box
+                        about
+                        the
+                        benefits and advantages</p>
+                    </div>
+                </div>
             </div>
         </div>
     {% endblock %}
