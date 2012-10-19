@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}bank{% endblock %}</title>
+    <script type="text/javascript"
+            src="{{ STATIC_URL }}jquery-1.8.2.min.js"></script>
+    <script type="text/javascript"
+            src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet"
           href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet"
@@ -59,8 +63,7 @@
                     <h1>Welcome to bank application</h1>
 
                     <p>This application will help you keep your balance,
-                        currency
-                        conversion, perform transactions and calculate
+                        currency conversion, perform transactions and calculate
                         profits.</p>
                     <a href="{% url registration_register %}"
                        class="btn btn-primary btn-large pull-right">Get
@@ -68,31 +71,18 @@
                 </div>
                 <div class="row">
                     <div class="span4"><p><i class="icon-ok"></i>Information
-                        box
-                        about
-                        the
-                        benefits and advantages</p>
+                        box about the benefits and advantages</p>
                     </div>
                     <div class="span4"><p><i class="icon-ok"></i>Information
-                        box
-                        about
-                        the
-                        benefits and advantages</p>
+                        box about the benefits and advantages</p>
                     </div>
                     <div class="span4"><p><i class="icon-ok"></i>Information
-                        box
-                        about
-                        the
-                        benefits and advantages</p>
+                        box about the benefits and advantages</p>
                     </div>
                 </div>
             </div>
         </div>
     {% endblock %}
 </div>
-<script type="text/javascript"
-        src="{{ STATIC_URL }}jquery-1.8.1.min.js"></script>
-<script type="text/javascript"
-        src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
