@@ -6,6 +6,7 @@ from django.views import generic
 from money.forms import CurrencyForm, TransactionForm, WalletForm, TemplateForm
 from money.models import Currency, Transaction, Wallet, Template
 
+
 class UserObjectsMixin(object):
     def get_queryset(self):
         qs = super(UserObjectsMixin, self).get_queryset()
@@ -14,7 +15,7 @@ class UserObjectsMixin(object):
 
 class MessageFormErrorsMixin(object):
     def form_invalid(self, form):
-        messages.add_message(self.request, messages.ERROR, form.errors)
+        messages.add_message(self.request, messages.ERROR, form.non_field_errors())
         return super(MessageFormErrorsMixin, self).form_invalid(form)
 
 

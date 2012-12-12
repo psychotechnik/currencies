@@ -2,25 +2,12 @@ from django import forms
 from money.models import Currency, Transaction, Wallet, Template
 
 class CurrencyForm(forms.ModelForm):
-    title = forms.CharField(label='', required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Currency title'}))
-    code = forms.CharField(label='', required=True,
-        widget=forms.TextInput(attrs={'placeholder': 'Currency code'}))
 
     class Meta:
         model = Currency
 
 
 class TransactionForm(forms.ModelForm):
-    template = forms.ModelChoiceField(queryset=Template.objects.all(),
-        label='', empty_label='Choice template', required=True,
-        widget=forms.Select(attrs={'class': 'span3'}))
-    rate = forms.FloatField(label='', initial=1.0,
-        widget=forms.TextInput(
-            attrs={'placeholder': 'Rate', 'class': 'span2'}))
-    source_amount = forms.FloatField(label='', min_value=0.01,
-        widget=forms.TextInput(
-            attrs={'placeholder': 'Amount', 'class': 'span2'}))
 
     class Meta:
         model = Transaction
@@ -41,11 +28,6 @@ class TransactionForm(forms.ModelForm):
 
 
 class WalletForm(forms.ModelForm):
-    title = forms.CharField(label='',
-        widget=forms.TextInput(attrs={'placeholder': 'Title', 'class': 'span4'}))
-    currency = forms.ModelChoiceField(queryset=Currency.objects.all(),
-        label='', empty_label='Choice currency',
-        widget=forms.Select(attrs={'class': 'span3'}))
 
     class Meta:
         model = Wallet
@@ -56,14 +38,6 @@ class WalletForm(forms.ModelForm):
 
 
 class TemplateForm(forms.ModelForm):
-    title = forms.CharField(label='',
-        widget=forms.TextInput(attrs={'placeholder': 'Title', 'class': 'span3'}))
-    source = forms.ModelChoiceField(queryset=Wallet.objects.all(),
-        label='', required=False, empty_label='Source',
-        widget=forms.Select(attrs={'class': 'span2'}))
-    destination = forms.ModelChoiceField(queryset=Wallet.objects.all(),
-        label='', required=False, empty_label='Destination',
-        widget=forms.Select(attrs={'class': 'span2'}))
 
     class Meta:
         model = Template

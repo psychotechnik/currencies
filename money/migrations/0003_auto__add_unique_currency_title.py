@@ -8,31 +8,13 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding field 'Wallet.user'
-        db.add_column('money_wallet', 'user',
-                      self.gf('django.db.models.fields.related.ForeignKey')(default=0, related_name='wallets', to=orm['auth.User']),
-                      keep_default=False)
-
-        # Adding field 'Transaction.user'
-        db.add_column('money_transaction', 'user',
-                      self.gf('django.db.models.fields.related.ForeignKey')(default=0, related_name='transactions', to=orm['auth.User']),
-                      keep_default=False)
-
-        # Adding field 'Template.user'
-        db.add_column('money_template', 'user',
-                      self.gf('django.db.models.fields.related.ForeignKey')(default=0, related_name='templates', to=orm['auth.User']),
-                      keep_default=False)
+        # Adding unique constraint on 'Currency', fields ['title']
+        db.create_unique('money_currency', ['title'])
 
 
     def backwards(self, orm):
-        # Deleting field 'Wallet.user'
-        db.delete_column('money_wallet', 'user_id')
-
-        # Deleting field 'Transaction.user'
-        db.delete_column('money_transaction', 'user_id')
-
-        # Deleting field 'Template.user'
-        db.delete_column('money_template', 'user_id')
+        # Removing unique constraint on 'Currency', fields ['title']
+        db.delete_unique('money_currency', ['title'])
 
 
     models = {
@@ -77,7 +59,7 @@ class Migration(SchemaMigration):
             'code': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '3'}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'is_active': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '100'})
+            'title': ('django.db.models.fields.CharField', [], {'unique': 'True', 'max_length': '100'})
         },
         'money.distribution': {
             'Meta': {'object_name': 'Distribution'},
@@ -88,9 +70,9 @@ class Migration(SchemaMigration):
         },
         'money.template': {
             'Meta': {'object_name': 'Template'},
-            'destination': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'destinations'", 'null': 'True', 'to': "orm['money.Wallet']"}),
+            'destination': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'destinations'", 'null': 'True', 'to': "orm['money.Wallet']"}),
             'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'source': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'sources'", 'null': 'True', 'to': "orm['money.Wallet']"}),
+            'source': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'sources'", 'null': 'True', 'to': "orm['money.Wallet']"}),
             'title': ('django.db.models.fields.CharField', [], {'max_length': '75'}),
             'user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'templates'", 'to': "orm['auth.User']"})
         },

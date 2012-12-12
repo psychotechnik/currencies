@@ -1,0 +1,37 @@
+{% extends "registration/base.html" %}
+
+{% block content %}
+    <form action="" method="post" class="form-horizontal">
+    <legend>
+        User login form
+    </legend>
+        {% include "form.html" %}
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                <i class="icon-ok icon-white"></i>
+                Sing in
+            </button>
+        </div>
+    </form>
+{% endblock %}
+
+{% block sidebar %}
+    <div class="well">
+        <ul>
+            <li>Not yet registered?
+                <a href="{% url registration_register %}">Registration</a>
+                will take a few steps a couple of minutes.
+            </li>
+            <li>Forgot account password? Please use
+                <a href="{% url auth_password_reset %}">password
+                    recovery form</a>.
+            </li>
+        </ul>
+    </div>
+{% endblock %}
+
+{% block title %}
+    Log in
+    |
+    {{ block.super }}
+{% endblock %}

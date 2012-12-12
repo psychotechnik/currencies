@@ -4,8 +4,10 @@ from django.db.models.signals import post_save, pre_delete
 from django.dispatch.dispatcher import receiver
 
 class Currency(models.Model):
-    title = models.CharField(max_length=100)
-    code = models.CharField(max_length=3, unique=True)
+    title = models.CharField(max_length=100, unique=True,
+        help_text='Currency human readable name, e.g., United States dollar')
+    code = models.CharField(max_length=3, unique=True,
+        help_text='Currency code name, e.g., USD')
     is_active = models.BooleanField(default=False)
 
     class Meta:
@@ -49,9 +51,10 @@ class Wallet(models.Model):
 
 class Template(models.Model):
     user = models.ForeignKey(User, related_name='templates')
-    title = models.CharField(max_length=75)
-    source = models.ForeignKey(Wallet, null=True, related_name='sources')
-    destination = models.ForeignKey(Wallet, null=True,
+    title = models.CharField(max_length=75, help_text='Template name')
+    source = models.ForeignKey(Wallet, blank=True, null=True,
+        related_name='sources')
+    destination = models.ForeignKey(Wallet, blank=True, null=True,
         related_name='destinations')
 
     class  Meta:
