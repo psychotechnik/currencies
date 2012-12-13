@@ -1,23 +1,22 @@
 from settings_base import *
 
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
-INTERNAL_IPS += (
+
+INTERNAL_IPS = (
     '127.0.0.1',
 )
 
-# Depending on your environment, if you only need to override one database setting, this could be as simple as:
-# DATABASES['default']['HOST'] = '123.123.123.123'
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'currencies',
-        'USER': 'web',
-        'PASSWORD': 'web',
-        'HOST': '127.0.0.1',
-        'PORT': '',
-    },
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': join(PROJECT_ROOT, 'database.db'),                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    }
 }
 
 # Dump all emails to console so we don't risk sending emails
@@ -25,8 +24,8 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Uncomment the following two lines to enable django-debug-toolbar:
-INSTALLED_APPS += ('debug_toolbar', 'django_extensions',)
-MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+#INSTALLED_APPS += ('debug_toolbar', 'django_extensions',)
+#MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 
 
 DEBUG_TOOLBAR_CONFIG = {
