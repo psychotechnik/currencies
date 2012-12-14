@@ -1,0 +1,53 @@
+from settings_base import *
+
+DEBUG = True
+
+INTERNAL_IPS = (
+    '127.0.0.1',
+)
+
+# Depending on your environment, if you only need to override one database setting, this could be as simple as:
+# DATABASES['default']['HOST'] = '123.123.123.123'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'currencies',
+        'USER': 'web',
+        'PASSWORD': 'web',
+        'HOST': '23.21.65.6',
+        'PORT': '',
+    },
+}
+
+EMAIL_HOST = '127.0.0.1'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+NOREPLY_EMAIL = 'noreply@uberbits.co'
+DEFAULT_FROM_EMAIL = NOREPLY_EMAIL 
+
+
+# Dump all emails to console so we don't risk sending emails
+# when using production data
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Uncomment the following two lines to enable django-debug-toolbar:
+INSTALLED_APPS += (
+			#'debug_toolbar', 
+			'django_extensions',
+)
+#MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+
+#DEBUG_TOOLBAR_CONFIG = {
+#   'INTERCEPT_REDIRECTS' : False,
+#}
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
+
