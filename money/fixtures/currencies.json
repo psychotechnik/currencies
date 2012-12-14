@@ -1,0 +1,1640 @@
+[
+    {
+        "pk": 56, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XUA", 
+            "is_active": true, 
+            "title": "ADB Unit of Account"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "AFN", 
+            "is_active": true, 
+            "title": "Afghani"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "DZD", 
+            "is_active": true, 
+            "title": "Algerian Dinar"
+        }
+    }, 
+    {
+        "pk": 176, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ARS", 
+            "is_active": true, 
+            "title": "Argentine Peso"
+        }
+    }, 
+    {
+        "pk": 71, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "AMD", 
+            "is_active": true, 
+            "title": "Armenian Dram"
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "AWG", 
+            "is_active": true, 
+            "title": "Aruban Florin"
+        }
+    }, 
+    {
+        "pk": 121, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "AUD", 
+            "is_active": true, 
+            "title": "Australian Dollar"
+        }
+    }, 
+    {
+        "pk": 146, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "AZN", 
+            "is_active": true, 
+            "title": "Azerbaijanian Manat"
+        }
+    }, 
+    {
+        "pk": 116, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BSD", 
+            "is_active": true, 
+            "title": "Bahamian Dollar"
+        }
+    }, 
+    {
+        "pk": 179, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BHD", 
+            "is_active": true, 
+            "title": "Bahraini Dinar"
+        }
+    }, 
+    {
+        "pk": 42, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "THB", 
+            "is_active": true, 
+            "title": "Baht"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "PAB", 
+            "is_active": true, 
+            "title": "Balboa"
+        }
+    }, 
+    {
+        "pk": 125, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BBD", 
+            "is_active": true, 
+            "title": "Barbados Dollar"
+        }
+    }, 
+    {
+        "pk": 34, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BYR", 
+            "is_active": true, 
+            "title": "Belarussian Ruble"
+        }
+    }, 
+    {
+        "pk": 109, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BZD", 
+            "is_active": true, 
+            "title": "Belize Dollar"
+        }
+    }, 
+    {
+        "pk": 68, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BMD", 
+            "is_active": true, 
+            "title": "Bermudian Dollar"
+        }
+    }, 
+    {
+        "pk": 128, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "VEF", 
+            "is_active": true, 
+            "title": "Bolivar "
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BOB", 
+            "is_active": true, 
+            "title": "Boliviano"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XBA", 
+            "is_active": true, 
+            "title": "Bond Markets Unit European Composite Unit (EURCO)"
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XBB", 
+            "is_active": true, 
+            "title": "Bond Markets Unit European Monetary Unit (E.M.U.-6)"
+        }
+    }, 
+    {
+        "pk": 63, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XBD", 
+            "is_active": true, 
+            "title": "Bond Markets Unit European Unit of Account 17 (E.U.A.-17)"
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XBC", 
+            "is_active": true, 
+            "title": "Bond Markets Unit European Unit of Account 9 (E.U.A.-9)"
+        }
+    }, 
+    {
+        "pk": 140, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BRL", 
+            "is_active": true, 
+            "title": "Brazilian Real"
+        }
+    }, 
+    {
+        "pk": 44, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BND", 
+            "is_active": true, 
+            "title": "Brunei Dollar"
+        }
+    }, 
+    {
+        "pk": 38, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BGN", 
+            "is_active": true, 
+            "title": "Bulgarian Lev"
+        }
+    }, 
+    {
+        "pk": 159, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BIF", 
+            "is_active": true, 
+            "title": "Burundi Franc"
+        }
+    }, 
+    {
+        "pk": 168, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XOF", 
+            "is_active": true, 
+            "title": "CFA Franc BCEAO"
+        }
+    }, 
+    {
+        "pk": 43, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XAF", 
+            "is_active": true, 
+            "title": "CFA Franc BEAC"
+        }
+    }, 
+    {
+        "pk": 35, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XPF", 
+            "is_active": true, 
+            "title": "CFP Franc"
+        }
+    }, 
+    {
+        "pk": 156, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CAD", 
+            "is_active": true, 
+            "title": "Canadian Dollar"
+        }
+    }, 
+    {
+        "pk": 157, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CVE", 
+            "is_active": true, 
+            "title": "Cape Verde Escudo"
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "KYD", 
+            "is_active": true, 
+            "title": "Cayman Islands Dollar"
+        }
+    }, 
+    {
+        "pk": 131, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CLP", 
+            "is_active": true, 
+            "title": "Chilean Peso"
+        }
+    }, 
+    {
+        "pk": 120, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XTS", 
+            "is_active": true, 
+            "title": "Codes specifically reserved for testing purposes"
+        }
+    }, 
+    {
+        "pk": 100, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "COP", 
+            "is_active": true, 
+            "title": "Colombian Peso"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "KMF", 
+            "is_active": true, 
+            "title": "Comoro Franc"
+        }
+    }, 
+    {
+        "pk": 132, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CDF", 
+            "is_active": true, 
+            "title": "Congolese Franc"
+        }
+    }, 
+    {
+        "pk": 154, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BAM", 
+            "is_active": true, 
+            "title": "Convertible Mark"
+        }
+    }, 
+    {
+        "pk": 47, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "NIO", 
+            "is_active": true, 
+            "title": "Cordoba Oro"
+        }
+    }, 
+    {
+        "pk": 60, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CRC", 
+            "is_active": true, 
+            "title": "Costa Rican Colon"
+        }
+    }, 
+    {
+        "pk": 39, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "HRK", 
+            "is_active": true, 
+            "title": "Croatian Kuna"
+        }
+    }, 
+    {
+        "pk": 123, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CUP", 
+            "is_active": true, 
+            "title": "Cuban Peso"
+        }
+    }, 
+    {
+        "pk": 96, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CZK", 
+            "is_active": true, 
+            "title": "Czech Koruna"
+        }
+    }, 
+    {
+        "pk": 127, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "GMD", 
+            "is_active": true, 
+            "title": "Dalasi"
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "DKK", 
+            "is_active": true, 
+            "title": "Danish Krone"
+        }
+    }, 
+    {
+        "pk": 80, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MKD", 
+            "is_active": true, 
+            "title": "Denar"
+        }
+    }, 
+    {
+        "pk": 40, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "DJF", 
+            "is_active": true, 
+            "title": "Djibouti Franc"
+        }
+    }, 
+    {
+        "pk": 165, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "STD", 
+            "is_active": true, 
+            "title": "Dobra"
+        }
+    }, 
+    {
+        "pk": 112, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "DOP", 
+            "is_active": true, 
+            "title": "Dominican Peso"
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "VND", 
+            "is_active": true, 
+            "title": "Dong"
+        }
+    }, 
+    {
+        "pk": 89, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XCD", 
+            "is_active": true, 
+            "title": "East Caribbean Dollar"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "EGP", 
+            "is_active": true, 
+            "title": "Egyptian Pound"
+        }
+    }, 
+    {
+        "pk": 145, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SVC", 
+            "is_active": true, 
+            "title": "El Salvador Colon"
+        }
+    }, 
+    {
+        "pk": 107, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ETB", 
+            "is_active": true, 
+            "title": "Ethiopian Birr"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "EUR", 
+            "is_active": true, 
+            "title": "Euro"
+        }
+    }, 
+    {
+        "pk": 172, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "FKP", 
+            "is_active": true, 
+            "title": "Falkland Islands Pound"
+        }
+    }, 
+    {
+        "pk": 106, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "FJD", 
+            "is_active": true, 
+            "title": "Fiji Dollar"
+        }
+    }, 
+    {
+        "pk": 67, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "HUF", 
+            "is_active": true, 
+            "title": "Forint"
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "GHS", 
+            "is_active": true, 
+            "title": "Ghana Cedi"
+        }
+    }, 
+    {
+        "pk": 33, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "GIP", 
+            "is_active": true, 
+            "title": "Gibraltar Pound"
+        }
+    }, 
+    {
+        "pk": 182, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XAU", 
+            "is_active": true, 
+            "title": "Gold"
+        }
+    }, 
+    {
+        "pk": 84, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "HTG", 
+            "is_active": true, 
+            "title": "Gourde"
+        }
+    }, 
+    {
+        "pk": 143, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "PYG", 
+            "is_active": true, 
+            "title": "Guarani"
+        }
+    }, 
+    {
+        "pk": 150, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "GNF", 
+            "is_active": true, 
+            "title": "Guinea Franc"
+        }
+    }, 
+    {
+        "pk": 170, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "GYD", 
+            "is_active": true, 
+            "title": "Guyana Dollar"
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "HKD", 
+            "is_active": true, 
+            "title": "Hong Kong Dollar"
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "UAH", 
+            "is_active": true, 
+            "title": "Hryvnia"
+        }
+    }, 
+    {
+        "pk": 45, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ISK", 
+            "is_active": true, 
+            "title": "Iceland Krona"
+        }
+    }, 
+    {
+        "pk": 94, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "INR", 
+            "is_active": true, 
+            "title": "Indian Rupee"
+        }
+    }, 
+    {
+        "pk": 166, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "IRR", 
+            "is_active": true, 
+            "title": "Iranian Rial"
+        }
+    }, 
+    {
+        "pk": 152, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "IQD", 
+            "is_active": true, 
+            "title": "Iraqi Dinar"
+        }
+    }, 
+    {
+        "pk": 75, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "JMD", 
+            "is_active": true, 
+            "title": "Jamaican Dollar"
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "JOD", 
+            "is_active": true, 
+            "title": "Jordanian Dinar"
+        }
+    }, 
+    {
+        "pk": 144, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "KES", 
+            "is_active": true, 
+            "title": "Kenyan Shilling"
+        }
+    }, 
+    {
+        "pk": 161, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "PGK", 
+            "is_active": true, 
+            "title": "Kina"
+        }
+    }, 
+    {
+        "pk": 48, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "LAK", 
+            "is_active": true, 
+            "title": "Kip"
+        }
+    }, 
+    {
+        "pk": 158, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "KWD", 
+            "is_active": true, 
+            "title": "Kuwaiti Dinar"
+        }
+    }, 
+    {
+        "pk": 64, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MWK", 
+            "is_active": true, 
+            "title": "Kwacha"
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "AOA", 
+            "is_active": true, 
+            "title": "Kwanza"
+        }
+    }, 
+    {
+        "pk": 141, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MMK", 
+            "is_active": true, 
+            "title": "Kyat"
+        }
+    }, 
+    {
+        "pk": 76, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "GEL", 
+            "is_active": true, 
+            "title": "Lari"
+        }
+    }, 
+    {
+        "pk": 173, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "LVL", 
+            "is_active": true, 
+            "title": "Latvian Lats"
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "LBP", 
+            "is_active": true, 
+            "title": "Lebanese Pound"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ALL", 
+            "is_active": true, 
+            "title": "Lek"
+        }
+    }, 
+    {
+        "pk": 105, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "HNL", 
+            "is_active": true, 
+            "title": "Lempira"
+        }
+    }, 
+    {
+        "pk": 85, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SLL", 
+            "is_active": true, 
+            "title": "Leone"
+        }
+    }, 
+    {
+        "pk": 88, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "LRD", 
+            "is_active": true, 
+            "title": "Liberian Dollar"
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "LYD", 
+            "is_active": true, 
+            "title": "Libyan Dinar"
+        }
+    }, 
+    {
+        "pk": 41, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SZL", 
+            "is_active": true, 
+            "title": "Lilangeni"
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "LTL", 
+            "is_active": true, 
+            "title": "Lithuanian Litas"
+        }
+    }, 
+    {
+        "pk": 69, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "LSL", 
+            "is_active": true, 
+            "title": "Loti"
+        }
+    }, 
+    {
+        "pk": 86, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MGA", 
+            "is_active": true, 
+            "title": "Malagasy Ariary"
+        }
+    }, 
+    {
+        "pk": 101, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MYR", 
+            "is_active": true, 
+            "title": "Malaysian Ringgit"
+        }
+    }, 
+    {
+        "pk": 103, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MUR", 
+            "is_active": true, 
+            "title": "Mauritius Rupee"
+        }
+    }, 
+    {
+        "pk": 95, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MXN", 
+            "is_active": true, 
+            "title": "Mexican Peso"
+        }
+    }, 
+    {
+        "pk": 91, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MXV", 
+            "is_active": true, 
+            "title": "Mexican Unidad de Inversion (UDI)"
+        }
+    }, 
+    {
+        "pk": 114, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MDL", 
+            "is_active": true, 
+            "title": "Moldovan Leu"
+        }
+    }, 
+    {
+        "pk": 51, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MAD", 
+            "is_active": true, 
+            "title": "Moroccan Dirham"
+        }
+    }, 
+    {
+        "pk": 53, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MZN", 
+            "is_active": true, 
+            "title": "Mozambique Metical"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BOV", 
+            "is_active": true, 
+            "title": "Mvdol"
+        }
+    }, 
+    {
+        "pk": 59, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "NGN", 
+            "is_active": true, 
+            "title": "Naira"
+        }
+    }, 
+    {
+        "pk": 153, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ERN", 
+            "is_active": true, 
+            "title": "Nakfa"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "NAD", 
+            "is_active": true, 
+            "title": "Namibia Dollar"
+        }
+    }, 
+    {
+        "pk": 49, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "NPR", 
+            "is_active": true, 
+            "title": "Nepalese Rupee"
+        }
+    }, 
+    {
+        "pk": 87, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ANG", 
+            "is_active": true, 
+            "title": "Netherlands Antillean Guilder"
+        }
+    }, 
+    {
+        "pk": 111, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ILS", 
+            "is_active": true, 
+            "title": "New Israeli Sheqel"
+        }
+    }, 
+    {
+        "pk": 177, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "RON", 
+            "is_active": true, 
+            "title": "New Romanian Leu"
+        }
+    }, 
+    {
+        "pk": 113, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "TWD", 
+            "is_active": true, 
+            "title": "New Taiwan Dollar"
+        }
+    }, 
+    {
+        "pk": 171, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "NZD", 
+            "is_active": true, 
+            "title": "New Zealand Dollar"
+        }
+    }, 
+    {
+        "pk": 98, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BTN", 
+            "is_active": true, 
+            "title": "Ngultrum"
+        }
+    }, 
+    {
+        "pk": 79, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "KPW", 
+            "is_active": true, 
+            "title": "North Korean Won"
+        }
+    }, 
+    {
+        "pk": 90, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "NOK", 
+            "is_active": true, 
+            "title": "Norwegian Krone"
+        }
+    }, 
+    {
+        "pk": 108, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "PEN", 
+            "is_active": true, 
+            "title": "Nuevo Sol"
+        }
+    }, 
+    {
+        "pk": 37, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MRO", 
+            "is_active": true, 
+            "title": "Ouguiya"
+        }
+    }, 
+    {
+        "pk": 66, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "PKR", 
+            "is_active": true, 
+            "title": "Pakistan Rupee"
+        }
+    }, 
+    {
+        "pk": 36, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XPD", 
+            "is_active": true, 
+            "title": "Palladium"
+        }
+    }, 
+    {
+        "pk": 92, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MOP", 
+            "is_active": true, 
+            "title": "Pataca"
+        }
+    }, 
+    {
+        "pk": 148, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "TOP", 
+            "is_active": true, 
+            "title": "Pa\u2019anga"
+        }
+    }, 
+    {
+        "pk": 130, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CUC", 
+            "is_active": true, 
+            "title": "Peso Convertible"
+        }
+    }, 
+    {
+        "pk": 46, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "UYU", 
+            "is_active": true, 
+            "title": "Peso Uruguayo"
+        }
+    }, 
+    {
+        "pk": 54, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "PHP", 
+            "is_active": true, 
+            "title": "Philippine Peso"
+        }
+    }, 
+    {
+        "pk": 115, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XPT", 
+            "is_active": true, 
+            "title": "Platinum"
+        }
+    }, 
+    {
+        "pk": 62, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "GBP", 
+            "is_active": true, 
+            "title": "Pound Sterling"
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BWP", 
+            "is_active": true, 
+            "title": "Pula"
+        }
+    }, 
+    {
+        "pk": 73, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "QAR", 
+            "is_active": true, 
+            "title": "Qatari Rial"
+        }
+    }, 
+    {
+        "pk": 129, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "GTQ", 
+            "is_active": true, 
+            "title": "Quetzal"
+        }
+    }, 
+    {
+        "pk": 55, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ZAR", 
+            "is_active": true, 
+            "title": "Rand"
+        }
+    }, 
+    {
+        "pk": 139, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "OMR", 
+            "is_active": true, 
+            "title": "Rial Omani"
+        }
+    }, 
+    {
+        "pk": 99, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "KHR", 
+            "is_active": true, 
+            "title": "Riel"
+        }
+    }, 
+    {
+        "pk": 119, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MVR", 
+            "is_active": true, 
+            "title": "Rufiyaa"
+        }
+    }, 
+    {
+        "pk": 104, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "IDR", 
+            "is_active": true, 
+            "title": "Rupiah"
+        }
+    }, 
+    {
+        "pk": 135, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "RUB", 
+            "is_active": true, 
+            "title": "Russian Ruble"
+        }
+    }, 
+    {
+        "pk": 133, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "RWF", 
+            "is_active": true, 
+            "title": "Rwanda Franc"
+        }
+    }, 
+    {
+        "pk": 74, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XDR", 
+            "is_active": true, 
+            "title": "SDR (Special Drawing Right)"
+        }
+    }, 
+    {
+        "pk": 77, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SHP", 
+            "is_active": true, 
+            "title": "Saint Helena Pound"
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SAR", 
+            "is_active": true, 
+            "title": "Saudi Riyal"
+        }
+    }, 
+    {
+        "pk": 178, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "RSD", 
+            "is_active": true, 
+            "title": "Serbian Dinar"
+        }
+    }, 
+    {
+        "pk": 155, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SCR", 
+            "is_active": true, 
+            "title": "Seychelles Rupee"
+        }
+    }, 
+    {
+        "pk": 137, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XAG", 
+            "is_active": true, 
+            "title": "Silver"
+        }
+    }, 
+    {
+        "pk": 163, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SGD", 
+            "is_active": true, 
+            "title": "Singapore Dollar"
+        }
+    }, 
+    {
+        "pk": 78, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SBD", 
+            "is_active": true, 
+            "title": "Solomon Islands Dollar"
+        }
+    }, 
+    {
+        "pk": 175, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "KGS", 
+            "is_active": true, 
+            "title": "Som"
+        }
+    }, 
+    {
+        "pk": 162, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SOS", 
+            "is_active": true, 
+            "title": "Somali Shilling"
+        }
+    }, 
+    {
+        "pk": 97, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "TJS", 
+            "is_active": true, 
+            "title": "Somoni"
+        }
+    }, 
+    {
+        "pk": 93, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SSP", 
+            "is_active": true, 
+            "title": "South Sudanese Pound"
+        }
+    }, 
+    {
+        "pk": 65, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "LKR", 
+            "is_active": true, 
+            "title": "Sri Lanka Rupee"
+        }
+    }, 
+    {
+        "pk": 58, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XSU", 
+            "is_active": true, 
+            "title": "Sucre"
+        }
+    }, 
+    {
+        "pk": 181, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SDG", 
+            "is_active": true, 
+            "title": "Sudanese Pound"
+        }
+    }, 
+    {
+        "pk": 122, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SRD", 
+            "is_active": true, 
+            "title": "Surinam Dollar"
+        }
+    }, 
+    {
+        "pk": 117, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SEK", 
+            "is_active": true, 
+            "title": "Swedish Krona"
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CHF", 
+            "is_active": true, 
+            "title": "Swiss Franc"
+        }
+    }, 
+    {
+        "pk": 50, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "SYP", 
+            "is_active": true, 
+            "title": "Syrian Pound"
+        }
+    }, 
+    {
+        "pk": 82, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "BDT", 
+            "is_active": true, 
+            "title": "Taka"
+        }
+    }, 
+    {
+        "pk": 151, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "WST", 
+            "is_active": true, 
+            "title": "Tala"
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "TZS", 
+            "is_active": true, 
+            "title": "Tanzanian Shilling"
+        }
+    }, 
+    {
+        "pk": 134, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "KZT", 
+            "is_active": true, 
+            "title": "Tenge"
+        }
+    }, 
+    {
+        "pk": 160, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XXX", 
+            "is_active": true, 
+            "title": "The codes assigned for transactions where no currency is involved"
+        }
+    }, 
+    {
+        "pk": 138, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "TTD", 
+            "is_active": true, 
+            "title": "Trinidad and Tobago Dollar"
+        }
+    }, 
+    {
+        "pk": 70, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "MNT", 
+            "is_active": true, 
+            "title": "Tugrik"
+        }
+    }, 
+    {
+        "pk": 169, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "TND", 
+            "is_active": true, 
+            "title": "Tunisian Dinar"
+        }
+    }, 
+    {
+        "pk": 81, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "TRY", 
+            "is_active": true, 
+            "title": "Turkish Lira"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "TMT", 
+            "is_active": true, 
+            "title": "Turkmenistan New Manat"
+        }
+    }, 
+    {
+        "pk": 61, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "AED", 
+            "is_active": true, 
+            "title": "UAE Dirham"
+        }
+    }, 
+    {
+        "pk": 136, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "XFU", 
+            "is_active": true, 
+            "title": "UIC-Franc"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "USD", 
+            "is_active": true, 
+            "title": "US Dollar"
+        }
+    }, 
+    {
+        "pk": 147, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "USN", 
+            "is_active": true, 
+            "title": "US Dollar (Next day)"
+        }
+    }, 
+    {
+        "pk": 174, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "USS", 
+            "is_active": true, 
+            "title": "US Dollar (Same day)"
+        }
+    }, 
+    {
+        "pk": 72, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "UGX", 
+            "is_active": true, 
+            "title": "Uganda Shilling"
+        }
+    }, 
+    {
+        "pk": 102, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "COU", 
+            "is_active": true, 
+            "title": "Unidad de Valor Real"
+        }
+    }, 
+    {
+        "pk": 124, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CLF", 
+            "is_active": true, 
+            "title": "Unidades de fomento"
+        }
+    }, 
+    {
+        "pk": 52, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "UYI", 
+            "is_active": true, 
+            "title": "Uruguay Peso en Unidades Indexadas (URUIURUI)"
+        }
+    }, 
+    {
+        "pk": 164, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "UZS", 
+            "is_active": true, 
+            "title": "Uzbekistan Sum"
+        }
+    }, 
+    {
+        "pk": 149, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "VUV", 
+            "is_active": true, 
+            "title": "Vatu"
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CHE", 
+            "is_active": true, 
+            "title": "WIR Euro"
+        }
+    }, 
+    {
+        "pk": 110, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CHW", 
+            "is_active": true, 
+            "title": "WIR Franc"
+        }
+    }, 
+    {
+        "pk": 126, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "KRW", 
+            "is_active": true, 
+            "title": "Won"
+        }
+    }, 
+    {
+        "pk": 83, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "YER", 
+            "is_active": true, 
+            "title": "Yemeni Rial"
+        }
+    }, 
+    {
+        "pk": 180, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "JPY", 
+            "is_active": true, 
+            "title": "Yen"
+        }
+    }, 
+    {
+        "pk": 167, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "CNY", 
+            "is_active": true, 
+            "title": "Yuan Renminbi"
+        }
+    }, 
+    {
+        "pk": 118, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ZMK", 
+            "is_active": true, 
+            "title": "Zambian Kwacha"
+        }
+    }, 
+    {
+        "pk": 57, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "ZWL", 
+            "is_active": true, 
+            "title": "Zimbabwe Dollar"
+        }
+    }, 
+    {
+        "pk": 142, 
+        "model": "money.currency", 
+        "fields": {
+            "code": "PLN", 
+            "is_active": true, 
+            "title": "Zloty"
+        }
+    }
+]
